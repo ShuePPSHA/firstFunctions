@@ -26,8 +26,10 @@ function myNormalFunc (text) {
 
 myNormalFunc()
 
+var i = 2;
+
 function changeTitleStyle (scndSctnTitle) {
-    scndSctnTitle.className = 'titleCian';
+    scndSctnTitle.classList.toggle("titleCian"); 
 }
 
 function myYobaFunc (txt) {
@@ -43,12 +45,29 @@ function myYobaFunc (txt) {
     
 
     scndBtn.addEventListener('click', () => {
-        const scndSctnTxt = document.createElement('div');
-        scndSctn.appendChild(scndSctnTxt);
-        scndSctnTxt.innerHTML = '<div style="background:orange" ><h2>Lorem Ipsum</h2> мазафакабичезз вот это я программист  <p>lorem*69</p></div> ';
+        
+        
 
+            
+            
+        if ( i % 2 == 0 ){    
+            const scndSctnTxt = document.createElement('div');
+            scndSctnTxt.id = "secondaryText";
+            scndSctn.append(scndSctnTxt);
+            scndSctnTxt.innerHTML = '<div style="background:orange" ><h2>Lorem Ipsum</h2> мазафакабичезз вот это я программист  <p>lorem*69</p></div> ';
+            
+        }
+        else {
+            secondaryText.remove()
+            
+        }
+        i += 1;
+        console.log(i)
+    
+        
         const lastOfTitle = yobaTitles[3];
         changeTitleStyle(lastOfTitle);
+        
     })
 }
 
